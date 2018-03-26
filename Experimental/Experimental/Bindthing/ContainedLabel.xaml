@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Experimental.Bindthing.ContainedLabel">
     <ContentView.Content>
-        <Label Text="{Binding Three}" HorizontalOptions="CenterAndExpand"/>
+        <Label x:Name="label" Text="{Binding Three}" HorizontalOptions="CenterAndExpand"/>
     </ContentView.Content>
 </ContentView>

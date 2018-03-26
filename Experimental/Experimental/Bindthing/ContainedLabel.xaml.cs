@@ -34,7 +34,7 @@ namespace Experimental.Bindthing {
 
         public ContainedLabel() {
             InitializeComponent();
-            BindingContext = model;
+            label.BindingContext = model;
         }
     }
 }
