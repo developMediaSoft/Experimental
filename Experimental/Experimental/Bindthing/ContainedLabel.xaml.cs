@@ -29,8 +29,8 @@ namespace Experimental.Bindthing {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContainedLabel : ContentView {
         private Model model = new Model();
-        public static readonly BindableProperty TwoProperty = BindableProperty.Create(nameof(Two), typeof(string), typeof(ContainedLabel), "Two");
-        public string Two { get { return (string)GetValue(TwoProperty); } set { SetValue(TwoProperty, value); model.Three = value; } }
+        public static readonly BindableProperty TwoProperty = BindableProperty.Create(nameof(Two), typeof(string), typeof(ContainedLabel), "Two", propertyChanged:(bindable, oldValue, newValue)=> { ((ContainedLabel)bindable).model.Three = (string)newValue; });
+        public string Two { get { return (string)GetValue(TwoProperty); } set { SetValue(TwoProperty, value); } }
 
         public ContainedLabel() {
             InitializeComponent();
